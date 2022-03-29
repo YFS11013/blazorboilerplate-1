@@ -12,7 +12,7 @@
             <MudIconButton Icon="@Icons.Filled.AccountCircle" Link="/account/profile" />
             @if (userViewModel == null)
             {
-                <MudProgressCircular Color="Color.Default" Indeterminate="true" />
+                @*<MudProgressCircular Color="Color.Default" Indeterminate="true" />*@
             }
             else
             {
@@ -41,7 +41,7 @@
 
     protected override async Task OnParametersSetAsync()
     {
-        userViewModel = null;
+        //userViewModel = null;
         var user = (await authenticationStateTask).User;
 
         if (user.Identity.IsAuthenticated)
